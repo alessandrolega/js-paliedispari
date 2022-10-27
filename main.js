@@ -12,22 +12,30 @@
 
 
 
-// PALIDROMA
+// PALIDROMA shift alt f
 
-let parola = prompt('Inserisci una parola');
-let reverse = '';
+function isPalidroma(parola) {
 
-for ( let i = parola.length; i >= 0; i--) {
-    if (i == parola) {
-        console.log('è palidroma')
+    let reverse = '';
 
-    } else {
-        console.log('non è palidroma')
+    for (let i = parola.length - 1; i >= 0; i--) {
+        if (reverse == parola) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
+    
+    
 }
 
+let reverse = '';
 
+let parola = prompt('Inserisci una parola');
+let palindroma = isPalidroma(parola);
 
+console.log('stringa palindroma ' + reverse);
 
 
 
