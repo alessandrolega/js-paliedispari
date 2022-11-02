@@ -14,40 +14,34 @@
 
 // PALIDROMA shift alt f
 
-function isPalidroma(parola) {
+function wordInput () {
 
-    let reverse = '';
+    let input = prompt("Inserisci una parola");
+    let wordReverse = " ";
+    let wordNormal = " ";
 
-    for (let i = parola.length - 1; i >= 0; i--) {
-        if (reverse == parola) {
-            return true;
-        } else {
-            return false;
-        }
+    for (let i = input.length - 1; i >= 0; i-- ){
+
+        wordReverse += input[i]; 
 
     }
-    
-    
+    console.log( `${wordReverse}` );
+
+    for ( let x = 0; x < input.length; x++ ){
+
+        wordNormal += input[x];
+        
+    }
+    console.log( `${wordNormal}` );
+
+    if ( wordReverse == wordNormal ) {
+        document.getElementById("text").innerHTML = `La parola ${input} è palindroma` 
+    } else {
+        document.getElementById("text").innerHTML = `La parola ${input} non è palindroma` 
+    }
 }
 
-let reverse = '';
-
-let parola = prompt('Inserisci una parola');
-let palindroma = isPalidroma(parola);
-
-console.log('stringa palindroma ' + reverse);
-
-
-
-
-
-
-
-
-
-
-
-
+wordInput ( "input" );
 
 
 // PARI E DISPARI 
