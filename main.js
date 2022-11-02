@@ -14,34 +14,75 @@
 
 // PALIDROMA shift alt f
 
-function wordInput () {
+// function wordInput () {
 
-    let input = prompt("Inserisci una parola");
-    let wordReverse = " ";
-    let wordNormal = " ";
+//     let input = prompt("Inserisci una parola");
+//     let wordReverse = " ";
+//     let wordNormal = " ";
 
-    for (let i = input.length - 1; i >= 0; i-- ){
+//     for (let i = input.length - 1; i >= 0; i-- ){
 
-        wordReverse += input[i]; 
+//         wordReverse += input[i]; 
 
-    }
-    console.log( `${wordReverse}` );
+//     }
+//     console.log( `${wordReverse}` );
 
-    for ( let x = 0; x < input.length; x++ ){
+//     for ( let x = 0; x < input.length; x++ ){
 
-        wordNormal += input[x];
+//         wordNormal += input[x];
         
-    }
-    console.log( `${wordNormal}` );
+//     }
+//     console.log( `${wordNormal}` );
 
-    if ( wordReverse == wordNormal ) {
-        document.getElementById("text").innerHTML = `La parola ${input} è palindroma` 
-    } else {
-        document.getElementById("text").innerHTML = `La parola ${input} non è palindroma` 
-    }
-}
+//     if ( wordReverse == wordNormal ) {
+//         document.getElementById("text").innerHTML = `La parola ${input} è palindroma` 
+//     } else {
+//         document.getElementById("text").innerHTML = `La parola ${input} non è palindroma` 
+//     }
+// }
 
-wordInput ( "input" );
+// wordInput ( "input" );
 
 
 // PARI E DISPARI 
+
+let inputUser = prompt('Scegli Pari o Dispari');
+let userNumber = parseInt(prompt('Scegli un numero da 1 a 5'));
+
+function randomNum (min, max) {
+    let numRandom = Math.floor(Math.random() * (max - min + 1) ) + min;
+    return numRandom;
+}
+
+let numRand = randomNum(1,5);
+console.log(`Il numero random è ${numRand}`);
+
+function sum (x,y) {
+    let sum = x + y;
+    return sum;
+}
+
+let sumValue = sum(userNumber, numRand);
+
+console.log(`Il valore della somma è ${sumValue}`);
+
+function checkParidis () {
+    let control = '';
+    if (sumValue % 2 == 0) {
+        control = 'pari';
+        return control
+    } else {
+        control = 'dispari';
+        return control
+    }
+}
+
+console.log(checkParidis());
+
+if (userNumber = checkParidis()) {
+    console.log('utente ha vinto');
+
+} else {
+    console.log('utente ha perso');
+}
+
